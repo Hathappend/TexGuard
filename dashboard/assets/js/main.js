@@ -233,6 +233,12 @@ async function processExport() {
                 btn.disabled = false;
                 return;
             }
+            if (new Date(start) > new Date(end)) {
+                alert("Tanggal mulai tidak boleh lebih baru dari tanggal akhir!");
+                btn.innerText = 'Download CSV';
+                btn.disabled = false;
+                return;
+            }
             url += `?start_date=${start}&end_date=${end}`;
         }
 
