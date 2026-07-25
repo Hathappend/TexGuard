@@ -17,6 +17,10 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
             cd /var/www/texguard
+            if [ ! -d ".git" ]; then
+              git init
+              git remote add origin https://github.com/Hathappend/TexGuard.git
+            fi
             git fetch --all
             git reset --hard origin/main
             sudo systemctl restart texguard
