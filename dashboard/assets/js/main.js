@@ -228,13 +228,13 @@ async function processExport() {
             const start = document.getElementById('export-start').value;
             const end = document.getElementById('export-end').value;
             if (!start || !end) {
-                alert("Pilih tanggal mulai dan tanggal akhir terlebih dahulu!");
+                showToast("Pilih tanggal mulai dan tanggal akhir terlebih dahulu!", 'error');
                 btn.innerText = 'Download CSV';
                 btn.disabled = false;
                 return;
             }
             if (new Date(start) > new Date(end)) {
-                alert("Tanggal mulai tidak boleh lebih baru dari tanggal akhir!");
+                showToast("Tanggal mulai tidak boleh lebih baru dari tanggal akhir!", 'error');
                 btn.innerText = 'Download CSV';
                 btn.disabled = false;
                 return;
@@ -247,12 +247,14 @@ async function processExport() {
         });
 
         if (response.status === 401) {
-            alert("Sesi berakhir. Silakan login kembali.");
-            logout();
+            showToast("Sesi berakhir. Silakan login kembali.", 'error');
+            setTimeout(logout, 2000);
             return;
         }
 
-        if (!response.ok) throw new Error('Gagal mengekspor data');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
 
         // Terima data teks (CSV)
         const csvData = await response.text();
@@ -276,14 +278,30 @@ async function processExport() {
         window.URL.revokeObjectURL(downloadUrl);
         
         closeExportModal();
+        showToast("Berkas CSV berhasil diunduh.");
 
     } catch (error) {
         console.error("Export error:", error);
-        alert("Terjadi kesalahan saat mengunduh CSV.");
+        showToast("Terjadi kesalahan saat mengunduh CSV.", 'error');
     } finally {
         btn.innerText = 'Download CSV';
         btn.disabled = false;
     }
+}
+
+function showToast(message, type = 'success') {
+    const toast = document.getElementById('toast');
+    if (!toast) return;
+    toast.innerText = message;
+    if (type === 'error') {
+        toast.classList.add('error');
+    } else {
+        toast.classList.remove('error');
+    }
+    toast.classList.add('show');
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 3000);
 }
 
 // Initial Load

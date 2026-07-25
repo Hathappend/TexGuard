@@ -160,23 +160,21 @@
     </div>
 
     <!-- Export Modal -->
-    <div id="export-modal" class="modal-overlay" style="display: none;">
+    <div class="modal" id="export-modal">
         <div class="modal-content">
-            <h3 style="margin-bottom: 15px; font-weight: 600;">Export Data CSV</h3>
+            <h3 style="margin-bottom: 20px;">Export Data CSV</h3>
             <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">Pilih rentang waktu data yang ingin diunduh.</p>
             
-            <div style="margin-bottom: 15px;">
-                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px;">
-                    <input type="radio" name="export_range" value="all" checked onchange="toggleDateInputs()"> Semua Data
-                </label>
+            <div class="radio-group" style="margin-bottom: 15px;">
+                <input type="radio" id="range-all" name="export_range" value="all" checked onchange="toggleDateInputs()">
+                <label for="range-all">Semua Data</label>
             </div>
-            <div style="margin-bottom: 20px;">
-                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px;">
-                    <input type="radio" name="export_range" value="custom" onchange="toggleDateInputs()"> Rentang Waktu
-                </label>
+            <div class="radio-group" style="margin-bottom: 20px;">
+                <input type="radio" id="range-custom" name="export_range" value="custom" onchange="toggleDateInputs()">
+                <label for="range-custom">Rentang Waktu</label>
             </div>
 
-            <div id="date-inputs" style="display: none; gap: 15px; margin-bottom: 25px;">
+            <div id="date-inputs" style="display: none; gap: 15px; margin-bottom: 20px;">
                 <div style="flex: 1;">
                     <label style="display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 5px;">Mulai Tanggal</label>
                     <input type="date" id="export-start" class="date-input">
@@ -187,12 +185,15 @@
                 </div>
             </div>
 
-            <div style="display: flex; gap: 10px; justify-content: flex-end;">
-                <button class="export-btn" onclick="closeExportModal()">Batal</button>
-                <button class="refresh-btn" onclick="processExport()" id="export-submit-btn">Download CSV</button>
+            <div style="display: flex; justify-content: flex-end; gap: 10px;">
+                <button class="export-btn" style="border: none; color: var(--text-muted);" onclick="closeExportModal()">Batal</button>
+                <button class="export-btn" id="export-submit-btn" style="background-color: var(--primary); color: white; border: none;" onclick="processExport()">Download CSV</button>
             </div>
         </div>
     </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
 
     <script src="assets/js/main.js"></script>
 </body>

@@ -293,3 +293,22 @@ tbody tr:hover {
 .date-input:focus {
     border-color: var(--accent);
 }
+
+/* Toast */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 1000;
+}
+.toast.show { opacity: 1; }
+.toast.error { background-color: #ef4444; }
