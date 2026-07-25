@@ -19,4 +19,4 @@ jobs:
             cd /var/www/texguard
             git fetch --all
             git reset --hard origin/main
-            # sudo systemctl restart texguard
+            sudo systemctl restart texguard
