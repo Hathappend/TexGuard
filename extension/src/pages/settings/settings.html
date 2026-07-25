@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengaturan Proteksi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/phosphor/regular/style.css">
+    <link rel="stylesheet" href="../../assets/phosphor/fill/style.css">
+    <link rel="stylesheet" href="../stats/stats.css">
+    <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+    <div class="layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="../../assets/icon48.png" alt="TexGuard Logo" class="app-logo">
+                <span>TexGuard</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="../stats/stats.html" class="nav-item"><i class="ph ph-chart-bar"></i> Ringkasan</a>
+            </nav>
+            <div class="sidebar-bottom">
+                <a href="#" class="nav-item active"><i class="ph ph-faders"></i> Pengaturan Proteksi</a>
+                <a href="../feedback/feedback.html" class="nav-item"><i class="ph ph-chat-centered-text"></i> Kirim Feedback</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="header-section">
+                <div>
+                    <h1>Pengaturan Proteksi</h1>
+                    <p class="subtitle">Atur preferensi proteksi komentar sesuai kebutuhan Anda.</p>
+                </div>
+                <button id="btn-save" class="btn-primary"><i class="ph-fill ph-floppy-disk"></i> Simpan Pengaturan</button>
+            </div>
+
+            <div class="settings-container">
+                <!-- Status Proteksi -->
+                <section class="settings-card">
+                    <div class="settings-card-header">
+                        <div class="header-text">
+                            <span class="number-badge">1</span>
+                            <div>
+                                <h3>Status Proteksi</h3>
+                                <p>Aktifkan atau nonaktifkan proteksi komentar.</p>
+                            </div>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="toggle-status">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="status-desc">
+                        <strong>Aktifkan Proteksi</strong>
+                        <p>Seluruh komentar akan diproteksi sesuai pengaturan di bawah.</p>
+                    </div>
+                </section>
+
+                <!-- Kategori Filter -->
+                <section class="settings-card">
+                    <div class="settings-card-header">
+                        <div class="header-text">
+                            <span class="number-badge">2</span>
+                            <div>
+                                <h3>Kategori Filter</h3>
+                                <p>Pilih kategori komentar berbahaya yang ingin diproteksi.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid-options" id="category-grid">
+                        <div class="selectable-card" data-cat="toxic">
+                            <i class="ph ph-skull"></i> <span>Toxic</span> <i class="ph-fill ph-check-circle check-icon"></i>
+                        </div>
+                        <div class="selectable-card" data-cat="hate_speech">
+                            <i class="ph ph-megaphone-simple"></i> <span>Hate Speech</span> <i class="ph-fill ph-check-circle check-icon"></i>
+                        </div>
+                        <div class="selectable-card" data-cat="spam">
+                            <i class="ph ph-envelope-open"></i> <span>Spam</span> <i class="ph-fill ph-check-circle check-icon"></i>
+                        </div>
+                        <div class="selectable-card" data-cat="cyberbullying">
+                            <i class="ph ph-users-three"></i> <span>Cyberbullying</span> <i class="ph-fill ph-check-circle check-icon"></i>
+                        </div>
+                    </div>
+                    <p class="helper-text"><i class="ph-fill ph-info"></i> Minimal satu kategori harus dipilih.</p>
+                </section>
+
+                <!-- Platform Media Sosial -->
+                <section class="settings-card">
+                    <div class="settings-card-header">
+                        <div class="header-text">
+                            <span class="number-badge">3</span>
+                            <div>
+                                <h3>Platform Media Sosial</h3>
+                                <p>Pilih platform yang ingin diproteksi.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="platform-options" id="platform-grid">
+                        <div class="platform-chip" data-plat="YOUTUBE"><i class="ph ph-youtube-logo" style="color:#ff0000"></i> YouTube <i class="ph-fill ph-check-circle check-icon"></i></div>
+                        <div class="platform-chip" data-plat="FACEBOOK"><i class="ph ph-facebook-logo" style="color:#1877f2"></i> Facebook <i class="ph-fill ph-check-circle check-icon"></i></div>
+                        <div class="platform-chip" data-plat="INSTAGRAM"><i class="ph ph-instagram-logo" style="color:#e1306c"></i> Instagram <i class="ph-fill ph-check-circle check-icon"></i></div>
+                        <div class="platform-chip" data-plat="TIKTOK"><i class="ph ph-tiktok-logo" style="color:#000000"></i> TikTok <i class="ph-fill ph-check-circle check-icon"></i></div>
+                        <div class="platform-chip" data-plat="TWITTER_X"><i class="ph ph-twitter-logo" style="color:#1da1f2"></i> Twitter <i class="ph-fill ph-check-circle check-icon"></i></div>
+                    </div>
+                </section>
+
+                <!-- Mode Proteksi -->
+                <section class="settings-card">
+                    <div class="settings-card-header">
+                        <div class="header-text">
+                            <span class="number-badge">4</span>
+                            <div>
+                                <h3>Mode Proteksi</h3>
+                                <p>Pilih cara komentar berbahaya ditangani.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mode-options" id="mode-grid">
+                        <div class="mode-card" data-mode="blur">
+                            <div class="mode-title"><div class="radio-btn"></div> Blur (Samarkan)</div>
+                            <p>Komentar berbahaya akan disamarkan hingga pengguna memilih untuk melihatnya.</p>
+                            <div class="mode-preview blur-preview">...</div>
+                        </div>
+                        <div class="mode-card" data-mode="hide">
+                            <div class="mode-title"><div class="radio-btn"></div> Hide (Sembunyikan)</div>
+                            <p>Komentar berbahaya akan disembunyikan sepenuhnya dari tampilan.</p>
+                            <div class="mode-preview hide-preview"><i class="ph-fill ph-eye-closed"></i></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Catatan -->
+                <div class="info-box">
+                    <p><i class="ph-fill ph-info"></i> <strong>Catatan</strong></p>
+                    <p class="text-sm">Perubahan pengaturan akan diterapkan secara otomatis pada semua platform yang dipilih.</p>
+                </div>
+
+                <div class="reset-section">
+                    <button id="btn-reset" class="btn-reset"><i class="ph ph-arrow-counter-clockwise"></i> Reset ke Pengaturan Default <i class="ph ph-caret-right chevron"></i></button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Pengaturan Berhasil Disimpan</div>
+
+    <!-- Scripts -->
+    <script src="../../shared/Config.js"></script>
+    <script src="Settings.js"></script>
+</body>
+</html>

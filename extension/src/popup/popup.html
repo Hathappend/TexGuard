@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TexGuard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/phosphor/regular/style.css">
+  <link rel="stylesheet" href="../assets/phosphor/fill/style.css">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-title">
+        <img src="../assets/icon48.png" alt="TexGuard Logo" class="app-logo">
+        <div>
+          <h1>TexGuard</h1>
+          <p>AI-Powered Comment Protection Extension</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="btn-settings" title="Pengaturan"><i class="ph ph-gear"></i></button>
+        <button id="btn-open-web" title="Buka"><i class="ph ph-arrow-square-out"></i></button>
+      </div>
+    </header>
+
+    <hr class="divider">
+
+    <!-- Status Proteksi -->
+    <section class="status-section">
+      <div class="status-header">
+        <h2>Status Proteksi</h2>
+        <label class="switch">
+          <input type="checkbox" id="toggle-protection" checked>
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="status-indicator">
+        <span class="badge active"><i class="ph-fill ph-check-circle"></i> AKTIF</span>
+        <span class="status-text">Komentar berbahaya sedang diproteksi</span>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Ringkasan Hari Ini -->
+    <section class="summary-section">
+      <h2>Ringkasan Hari Ini</h2>
+      <div class="summary-cards">
+        <div class="card">
+          <i class="ph ph-chat-circle-dots"></i>
+          <h3 id="stat-protected">0</h3>
+          <p>Komentar<br>Diproteksi</p>
+        </div>
+        <div class="card">
+          <i class="ph ph-scan"></i>
+          <h3 id="stat-scanned">0</h3>
+          <p>Komentar<br>Dipindai</p>
+        </div>
+        <div class="card">
+          <i class="ph ph-shield"></i>
+          <h3 id="stat-platforms">0</h3>
+          <p>Platform<br>Aktif</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Platform Aktif -->
+    <section class="platform-section">
+      <h2>Platform Aktif</h2>
+      <div class="platform-icons">
+        <div class="platform-item" data-platform="YOUTUBE"><i class="ph ph-youtube-logo"></i><span>YouTube</span><div class="dot"></div></div>
+        <div class="platform-item" data-platform="FACEBOOK"><i class="ph ph-facebook-logo"></i><span>Facebook</span><div class="dot"></div></div>
+        <div class="platform-item" data-platform="INSTAGRAM"><i class="ph ph-instagram-logo"></i><span>Instagram</span><div class="dot"></div></div>
+        <div class="platform-item" data-platform="TIKTOK"><i class="ph ph-tiktok-logo"></i><span>TikTok</span><div class="dot"></div></div>
+        <div class="platform-item" data-platform="TWITTER_X"><i class="ph ph-twitter-logo"></i><span>Twitter</span><div class="dot"></div></div>
+      </div>
+    </section>
+
+    <!-- Navigasi -->
+    <section class="nav-section">
+      <button id="nav-stats" class="nav-btn primary">
+        <i class="ph ph-chart-bar"></i> Lihat Statistik & Riwayat <i class="ph ph-caret-right chevron"></i>
+      </button>
+      <button id="nav-settings" class="nav-btn secondary">
+        <i class="ph ph-faders"></i> Pengaturan Proteksi <i class="ph ph-caret-right chevron"></i>
+      </button>
+      <button id="nav-feedback" class="nav-btn secondary">
+        <i class="ph ph-chat-centered-text"></i> Kirim Feedback <i class="ph ph-caret-right chevron"></i>
+      </button>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span class="version"><i class="ph-fill ph-shield-check"></i> Proteksi Komentar v1.0.0</span>
+      <a href="#" id="link-website" class="link-website">Lihat Website <i class="ph ph-arrow-square-out"></i></a>
+    </footer>
+  </div>
+
+  <script src="../shared/Config.js"></script>
+  <script src="../shared/Statistics.js"></script>
+  <script src="Popup.js"></script>
+</body>
+</html>

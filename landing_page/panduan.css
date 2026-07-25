@@ -1,0 +1,455 @@
+/* Guide Hero Section */
+.guide-hero {
+    padding: 60px 0;
+    background-color: var(--bg-light);
+    position: relative;
+}
+
+.guide-hero-container {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+.guide-hero-content {
+    flex: 1;
+}
+
+.guide-hero-content h1 {
+    font-size: 32px;
+}
+
+.guide-hero-content p {
+    font-size: 16px;
+    max-width: 90%;
+}
+
+/* Modern Docs Illustration Mockup */
+.guide-hero-illustration {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+}
+
+.modern-docs-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+}
+
+.docs-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, rgba(139, 92, 246, 0) 70%);
+    border-radius: 50%;
+    z-index: 0;
+    animation: pulse-glow 4s ease-in-out infinite alternate;
+}
+
+.docs-card {
+    position: relative;
+    z-index: 1;
+    background-color: var(--bg-main);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+    transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+    transition: transform 0.3s ease;
+    animation: float-docs 5s ease-in-out infinite;
+}
+
+.docs-card:hover {
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+}
+
+@keyframes float-docs {
+    0%, 100% { transform: perspective(1000px) rotateY(-5deg) rotateX(2deg) translateY(0); }
+    50% { transform: perspective(1000px) rotateY(-5deg) rotateX(2deg) translateY(-10px); }
+}
+
+.docs-header {
+    background-color: #f8fafc;
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+.docs-search {
+    background-color: white;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.docs-body {
+    display: flex;
+    height: 200px;
+}
+
+.docs-sidebar {
+    width: 80px;
+    border-right: 1px solid var(--border);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: #f8fafc;
+}
+
+.d-line {
+    height: 6px;
+    background-color: #e2e8f0;
+    border-radius: 3px;
+}
+
+.active-line {
+    background-color: var(--primary);
+}
+
+.docs-content {
+    flex: 1;
+    padding: 16px;
+    background-color: white;
+}
+
+.d-title {
+    height: 12px;
+    width: 60%;
+    background-color: var(--text-main);
+    border-radius: 6px;
+    margin-bottom: 16px;
+    opacity: 0.8;
+}
+
+.d-text {
+    height: 6px;
+    background-color: #e2e8f0;
+    border-radius: 3px;
+    margin-bottom: 8px;
+}
+
+.d-step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.step-num {
+    width: 16px;
+    height: 16px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.step-text {
+    height: 6px;
+    background-color: #cbd5e1;
+    border-radius: 3px;
+    flex: 1;
+}
+
+/* Reusing float badges from index.css logic */
+.badge-tr {
+    top: -15px;
+    right: -20px;
+    animation: float-badge 4s ease-in-out infinite 0.5s;
+}
+
+.badge-bl {
+    bottom: 10px;
+    left: -20px;
+    animation: float-badge 5s ease-in-out infinite 1s;
+}
+
+/* Tabs */
+.guide-tabs-wrapper {
+    border-bottom: 1px solid var(--border);
+    background-color: var(--bg-main);
+}
+
+.guide-tabs {
+    display: flex;
+    gap: 16px;
+}
+
+.tab-btn {
+    padding: 20px 24px;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+.tab-btn i {
+    font-size: 20px;
+}
+
+.tab-btn:hover {
+    color: var(--primary);
+}
+
+.tab-btn.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+/* Guide Content */
+.guide-content {
+    padding: 60px 0 80px 0;
+    min-height: 50vh;
+    background-color: var(--bg-main);
+}
+
+.content-title {
+    text-align: left;
+    margin-bottom: 32px;
+    font-size: 24px;
+}
+
+.steps-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 48px;
+    overflow-x: auto;
+    padding: 16px 4px 16px 4px; /* Top padding prevents the badge from being cut off */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    cursor: grab;
+}
+
+.steps-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.steps-wrapper:active {
+    cursor: grabbing;
+}
+
+.step-card {
+    flex: 1;
+    min-width: 240px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background-color: var(--bg-card);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.step-number {
+    position: absolute;
+    top: -12px;
+    left: 16px;
+    width: 24px;
+    height: 24px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.step-mockup {
+    height: 120px;
+    background-color: var(--bg-light);
+    border-bottom: 1px solid var(--border);
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.chrome-icon { font-size: 48px; color: #cbd5e1; }
+.puzzle-icon { font-size: 48px; color: #cbd5e1; }
+
+.search-bar {
+    width: 100%;
+    background: white;
+    border: 1px solid #cbd5e1;
+    border-radius: 16px;
+    padding: 6px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    color: #94a3b8;
+}
+
+.mockup-btn {
+    background-color: var(--primary);
+    color: white;
+    font-size: 10px;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+.mockup-dialog {
+    background: white;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 12px;
+    width: 100%;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.dialog-text { font-size: 10px; font-weight: 600; margin-bottom: 12px; }
+.dialog-btns { display: flex; gap: 8px; justify-content: flex-end; }
+.d-btn { font-size: 8px; padding: 4px 8px; border-radius: 4px; }
+.d-btn.outline { border: 1px solid #cbd5e1; color: var(--text-muted); }
+.d-btn.solid { background: var(--primary); color: white; }
+
+.step-text {
+    padding: 20px 16px;
+}
+
+.step-text h4 {
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.step-text p {
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.step-arrow {
+    color: #94a3b8;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+/* Info Alert */
+.info-alert {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+}
+
+.info-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.info-icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--text-muted);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.info-text h4 {
+    margin-bottom: 2px;
+    font-size: 14px;
+}
+
+.info-text p {
+    font-size: 14px;
+}
+
+.info-btn {
+    font-size: 13px;
+    padding: 8px 16px;
+}
+
+/* FAQ Accordion Styles */
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 800px;
+}
+
+.faq-item {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.faq-item.active {
+    border-color: var(--primary);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.faq-question {
+    padding: 16px 20px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-main);
+    user-select: none;
+    transition: color 0.2s;
+}
+
+.faq-question:hover {
+    color: var(--primary);
+}
+
+.faq-question i {
+    transition: transform 0.3s;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    color: var(--text-muted);
+    font-size: 15px;
+    line-height: 1.6;
+    transition: all 0.3s ease-in-out;
+}
+
+.faq-item.active .faq-answer {
+    padding: 0 20px 20px 20px;
+    max-height: 300px;
+}

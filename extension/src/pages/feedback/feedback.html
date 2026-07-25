@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TexGuard - Kirim Feedback</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/phosphor/regular/style.css">
+    <link rel="stylesheet" href="../../assets/phosphor/fill/style.css">
+    <link rel="stylesheet" href="../stats/stats.css">
+    <link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+    <div class="layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="../../assets/icon48.png" alt="TexGuard Logo" class="app-logo">
+                <span>TexGuard</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="../stats/stats.html" class="nav-item"><i class="ph ph-chart-bar"></i> Ringkasan</a>
+            </nav>
+            <div class="sidebar-bottom">
+                <a href="../settings/settings.html" class="nav-item"><i class="ph ph-faders"></i> Pengaturan Proteksi</a>
+                <a href="#" class="nav-item active"><i class="ph ph-chat-centered-text"></i> Kirim Feedback</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="header-section">
+                <div>
+                    <h1>Kirim Feedback</h1>
+                    <p class="subtitle">Bantu kami meningkatkan akurasi proteksi komentar dengan memberikan koreksi.</p>
+                </div>
+            </div>
+
+            <div class="feedback-container">
+                <!-- Section 1: Informasi Komentar -->
+                <section class="feedback-card">
+                    <div class="feedback-card-header">
+                        <span class="number-badge">1</span>
+                        <h3>Informasi Komentar</h3>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Platform</label>
+                            <div class="input-with-icon">
+                                <select id="input-platform" class="form-control">
+                                    <option value="YOUTUBE">YouTube</option>
+                                    <option value="FACEBOOK">Facebook</option>
+                                    <option value="INSTAGRAM">Instagram</option>
+                                    <option value="TIKTOK">TikTok</option>
+                                    <option value="TWITTER_X">Twitter/X</option>
+                                </select>
+                                <i class="ph ph-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Tanggal & Waktu</label>
+                            <div class="input-with-icon">
+                                <input type="text" id="input-datetime" class="form-control" placeholder="18 Mei 2024, 14:32">
+                                <i class="ph ph-calendar-blank"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Komentar Asli</label>
+                        <div class="input-with-icon">
+                            <input type="text" id="input-text" class="form-control" placeholder="Masukkan komentar yang ingin dikoreksi...">
+                            <i class="ph ph-copy icon-clickable" title="Salin"></i>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 2: Hasil Klasifikasi -->
+                <section class="feedback-card">
+                    <div class="feedback-card-header">
+                        <span class="number-badge">2</span>
+                        <h3>Hasil Klasifikasi Sistem (AI)</h3>
+                    </div>
+
+                    <div class="ai-result">
+                        <div class="ai-info-box">
+                            <label>Kategori Deteksi</label>
+                            <span class="badge-cat toxic" id="ai-cat">Toxic</span>
+                        </div>
+                        <div class="ai-info-box">
+                            <label>Tindakan Diterapkan</label>
+                            <span id="ai-action">Blur (Samarkan)</span>
+                        </div>
+                    </div>
+
+                    <div class="confidence-bar-container">
+                        <div class="confidence-labels">
+                            <label>Tingkat Keyakinan AI</label>
+                            <span id="ai-conf-text">85% (Tinggi)</span>
+                        </div>
+                        <div class="progress-bg">
+                            <div class="progress-fill" id="ai-conf-bar" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 3: Koreksi Anda -->
+                <section class="feedback-card">
+                    <div class="feedback-card-header">
+                        <span class="number-badge">3</span>
+                        <h3>Koreksi Anda</h3>
+                    </div>
+
+                    <label class="form-label">Kategori yang Seharusnya</label>
+                    <div class="grid-options" id="feedback-categories">
+                        <div class="selectable-card" data-cat="toxic">
+                            <i class="ph ph-skull"></i> <span>Toxic</span> <i class="ph-fill ph-check-circle check-icon"></i>
+                        </div>
+                        <div class="selectable-card" data-cat="hate_speech">
+                            <i class="ph ph-megaphone-simple"></i> <span>Hate Speech</span> <i class="ph-fill ph-check-circle check-icon"></i>
+                        </div>
+                        <div class="selectable-card" data-cat="spam">
+                            <i class="ph ph-envelope-open"></i> <span>Spam</span> <i class="ph-fill ph-check-circle check-icon"></i>
+                        </div>
+                        <div class="selectable-card" data-cat="cyberbullying">
+                            <i class="ph ph-users-three"></i> <span>Cyberbullying</span> <i class="ph-fill ph-check-circle check-icon"></i>
+                        </div>
+                        <div class="selectable-card" data-cat="normal">
+                            <i class="ph ph-check-circle"></i> <span>Normal (Bukan Spam/Toxic)</span> <i class="ph-fill ph-check-circle check-icon"></i>
+                        </div>
+                    </div>
+
+                    <label class="form-label">Tindakan yang Seharusnya</label>
+                    <div class="radio-group" id="feedback-actions">
+                        <label class="radio-label"><input type="radio" name="action" value="blur"> Blur (Samarkan)</label>
+                        <label class="radio-label"><input type="radio" name="action" value="hide"> Hide (Sembunyikan)</label>
+                        <label class="radio-label"><input type="radio" name="action" value="none"> Tidak Perlu Diproteksi</label>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 16px;">
+                        <label>Alasan Koreksi (Opsional)</label>
+                        <textarea class="form-control" id="input-reason" rows="3" placeholder="Jelaskan alasan koreksi Anda (opsional)..." maxlength="300"></textarea>
+                        <div class="char-count"><span id="char-current">0</span>/300</div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn-outline" id="btn-cancel">Batal</button>
+                        <button class="btn-primary" id="btn-submit"><i class="ph-fill ph-paper-plane-tilt"></i> Kirim Feedback</button>
+                    </div>
+                </section>
+
+                <!-- Riwayat Feedback -->
+                <section class="feedback-history-section">
+                    <h3>Riwayat Feedback Anda</h3>
+                    <div class="table-container">
+                        <table class="history-table">
+                            <thead>
+                                <tr>
+                                    <th>TANGGAL</th>
+                                    <th>PLATFORM</th>
+                                    <th>KOMENTAR</th>
+                                    <th>KLASIFIKASI SISTEM</th>
+                                    <th>KOREKSI ANDA</th>
+                                    <th>STATUS</th>
+                                </tr>
+                            </thead>
+                            <tbody id="feedback-history-tbody">
+                                <!-- JS Injected -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-footer pagination-controls">
+                        <button id="btn-prev-page" class="btn-outline" disabled><i class="ph ph-caret-left"></i> Sebelumnya</button>
+                        <span id="page-indicator">Halaman 1 dari 1</span>
+                        <button id="btn-next-page" class="btn-outline" disabled>Selanjutnya <i class="ph ph-caret-right"></i></button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    
+    <div id="toast" class="toast">Feedback Berhasil Dikirim</div>
+
+    <script src="../../shared/Config.js"></script>
+    <script src="Feedback.js"></script>
+</body>
+</html>

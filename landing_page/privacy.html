@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kebijakan Privasi | TexGuard</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=3">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .privacy-section {
+            padding: 120px 0 60px;
+            min-height: 100vh;
+            background-color: var(--bg-light);
+            color: var(--text-muted);
+        }
+        .privacy-content {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .privacy-content h1 {
+            color: var(--text-main);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .privacy-content h2 {
+            color: var(--text-main);
+            font-size: 1.5rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .privacy-content p, .privacy-content ul {
+            margin-bottom: 20px;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+        .privacy-content ul {
+            padding-left: 20px;
+        }
+        .privacy-content li {
+            margin-bottom: 10px;
+        }
+        .privacy-content strong {
+            color: var(--text-main);
+        }
+    </style>
+</head>
+<body class="page-loaded">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="logo.png" alt="TexGuard Logo" class="app-logo">
+                <span class="logo-text">TexGuard</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="panduan.html">Panduan</a></li>
+                <li><a href="privacy.html" class="active">Privacy Policy</a></li>
+                <li><a href="index.html#tentang">Tentang</a></li>
+                <li><a href="index.html#kontak">Kontak</a></li>
+            </ul>
+            <a href="#" class="btn btn-primary">Instal Ekstensi</a>
+        </div>
+    </nav>
+
+    <!-- Privacy Content -->
+    <section class="privacy-section">
+        <div class="container">
+            <div class="privacy-content">
+                <h1>Privacy Policy</h1>
+                <p><strong>Effective Date:</strong> June 20, 2026</p>
+                <p>Thank you for choosing to use TexGuard. This Privacy Policy explains how we collect, use, and protect your information when you use our Chrome Extension. TexGuard is committed to ensuring that your privacy is protected and strictly adheres to the Chrome Web Store Developer Program Policies.</p>
+                
+                <h2>1. Information We Collect</h2>
+                <p>TexGuard operates with a <strong>Data Minimization</strong> principle. We only collect the data absolutely necessary to provide our core functionality (detecting and filtering toxic comments).</p>
+                <ul>
+                    <li><strong>Comment Text:</strong> The extension reads the pure text content of comments displayed on supported social media platforms (Instagram, Facebook, TikTok, YouTube, Twitter/X, Reddit, LinkedIn).</li>
+                    <li><strong>What We DO NOT Collect:</strong> We do <strong>NOT</strong> collect, read, or store any Personally Identifiable Information (PII). This includes, but is not limited to:
+                        <ul>
+                            <li>Your username, passwords, or login credentials.</li>
+                            <li>The usernames or profile URLs of the commenters.</li>
+                            <li>Your browsing history or cookies.</li>
+                            <li>Your IP address or device fingerprint.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h2>2. How We Use Your Information</h2>
+                <p>The comment text collected by TexGuard is used exclusively for the purpose of classification:</p>
+                <ul>
+                    <li>The text is securely transmitted to our external AI server (<code>api.texguard.site</code>) strictly for real-time analysis to determine if the content is toxic, spam, or harmful.</li>
+                    <li>Once the server returns the classification score to your browser, the text data is immediately discarded from the server memory.</li>
+                </ul>
+
+                <h2>3. Data Storage and Retention</h2>
+                <ul>
+                    <li><strong>Local Storage:</strong> TexGuard uses your browser's local storage (<code>chrome.storage</code>) solely to save your personal extension preferences (such as the On/Off toggle state) and a temporary cache of processed comment IDs to optimize performance and save bandwidth.</li>
+                    <li><strong>Server Storage:</strong> We do <strong>not</strong> log, store, or archive the comment texts sent to our API servers.</li>
+                </ul>
+
+                <h2>4. Third-Party Sharing</h2>
+                <p>We will never sell, trade, or rent your data to any third party. The text data is only processed by our designated inference endpoints securely and is never shared with advertising agencies or data brokers.</p>
+
+                <h2>5. Changes to This Privacy Policy</h2>
+                <p>We may update our Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any changes by updating the "Effective Date" at the top of this policy.</p>
+
+                <h2>6. Contact Us</h2>
+                <p>If you have any questions or concerns about this Privacy Policy or our data handling practices, please contact us at:</p>
+                <ul>
+                    <li><strong>Developer:</strong> Asep Yaman Suryaman</li>
+                    <li><strong>Email:</strong> ay.suryaman@gmail.com</li>
+                </ul>
+
+                <hr style="border-color: var(--border-color); margin: 40px 0;">
+
+                <h2>Ringkasan Bahasa Indonesia</h2>
+                <p><em>TexGuard hanya membaca teks murni dari kolom komentar untuk dikirimkan ke server AI kami guna mendeteksi kata-kata kasar/spam. Kami <strong>TIDAK PERNAH</strong> membaca, mengambil, atau menyimpan data pribadi Anda (seperti username, password, foto profil, atau riwayat browsing). Teks yang dikirim ke server tidak akan pernah disimpan apalagi dijual ke pihak ketiga. Privasi Anda adalah prioritas utama kami.</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="logo.png" alt="TexGuard Logo" class="app-logo">
+                        <span class="logo-text">TexGuard</span>
+                    </div>
+                    <p>Ekstensi AI (IndoBERTweet) untuk menciptakan ruang komentar yang lebih aman dan nyaman.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="index.html#fitur">Fitur</a></li>
+                        <li><a href="panduan.html">Panduan</a></li>
+                        <li><a href="index.html#tentang">Tentang</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Bantuan</h4>
+                    <ul>
+                        <li><a href="panduan.html">Panduan Penggunaan</a></li>
+                        <li><a href="panduan.html#tab-faq">FAQ</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="index.html#kontak">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Ikuti Kami</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="ph ph-instagram-logo"></i></a>
+                        <a href="#"><i class="ph ph-twitter-logo"></i></a>
+                        <a href="#"><i class="ph ph-facebook-logo"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TexGuard. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

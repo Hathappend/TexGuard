@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TexGuard | Ekstensi AI</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=3">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="logo.png" alt="TexGuard Logo" class="app-logo">
+                <span class="logo-text">TexGuard</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Beranda</a></li>
+                <li><a href="panduan.html">Panduan</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+            <a href="#" class="btn btn-primary">Instal Ekstensi</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Ambient Background Glows -->
+        <div class="ambient-background">
+            <div class="ambient-glow glow-1"></div>
+            <div class="ambient-glow glow-2"></div>
+        </div>
+
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>TexGuard</h1>
+                <p>AI-Powered Comment Protection Extension. Lindungi pengalaman berkomentar Anda di media sosial dengan AI (IndoBERTweet) yang secara otomatis mendeteksi dan menyembunyikan komentar toxic, hate speech, spam, dan cyberbullying.</p>
+                
+                <div class="hero-actions">
+                    <a href="#" class="btn btn-primary btn-lg"><i class="ph-fill ph-chrome-logo"></i> Instal di Chrome</a>
+                    <a href="#" class="btn btn-outline btn-lg"><i class="ph ph-book-open"></i> Lihat Panduan</a>
+                </div>
+
+                <div class="hero-badges">
+                    <span><i class="ph-fill ph-shield-check"></i> Aman</span>
+                    <span><i class="ph-fill ph-gift"></i> Gratis</span>
+                    <span><i class="ph-fill ph-lock-key"></i> Privasi Terjaga</span>
+                </div>
+            </div>
+            <div class="hero-illustration">
+                <!-- Modern UI Mockup -->
+                <div class="modern-mockup-wrapper">
+                    <!-- Background Glow -->
+                    <div class="mockup-glow"></div>
+                    
+                    <!-- Main Mockup Card -->
+                    <div class="mockup-card">
+                        <div class="mockup-header">
+                            <span class="dot dot-red"></span>
+                            <span class="dot dot-yellow"></span>
+                            <span class="dot dot-green"></span>
+                        </div>
+                        <div class="mockup-body">
+                            <!-- Safe Comment -->
+                            <div class="mockup-comment">
+                                <div class="m-avatar"><i class="ph-fill ph-user"></i></div>
+                                <div class="m-content">
+                                    <div class="m-name">Budi Santoso</div>
+                                    <div class="m-text">Wah, informasinya sangat bermanfaat! Terima kasih kak.</div>
+                                </div>
+                            </div>
+                            <!-- Toxic Comment (Blurred by AI) -->
+                            <div class="mockup-comment toxic-comment">
+                                <div class="m-avatar"><i class="ph-fill ph-user"></i></div>
+                                <div class="m-content">
+                                    <div class="m-name">Anonim123</div>
+                                    <div class="m-text blur-text">Ini adalah contoh komentar kasar yang mengandung unsur kebencian.</div>
+                                    <div class="ai-overlay">
+                                        <i class="ph-fill ph-shield-check"></i>
+                                        <span>Disensor oleh TexGuard AI</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badges -->
+                    <div class="floating-badge badge-top">
+                        <div class="badge-dot pulse-green"></div> AI Shield Active
+                    </div>
+                    <div class="floating-badge badge-bottom">
+                        <div class="badge-dot pulse-blue"></div> Real-time Protection
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features reveal" id="fitur">
+        <div class="container">
+            <h2 class="section-title">Fitur Utama</h2>
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card reveal" style="transition-delay: 0.1s;">
+                    <div class="feature-icon"><i class="ph ph-shield-check"></i></div>
+                    <h3>Deteksi Cerdas</h3>
+                    <p>AI memahami konteks komentar berbahaya dengan akurat.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="feature-card reveal" style="transition-delay: 0.2s;">
+                    <div class="feature-icon"><i class="ph ph-eye-slash"></i></div>
+                    <h3>Sembunyikan Otomatis</h3>
+                    <p>Komentar berbahaya disembunyikan secara otomatis (blur atau hide).</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="feature-card reveal" style="transition-delay: 0.3s;">
+                    <div class="feature-icon"><i class="ph ph-chart-bar"></i></div>
+                    <h3>Statistik & Riwayat</h3>
+                    <p>Pantau komentar yang diproteksi dan kategori yang paling sering.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="feature-card reveal" style="transition-delay: 0.4s;">
+                    <div class="feature-icon"><i class="ph ph-chat-centered-text"></i></div>
+                    <h3>Feedback Pengguna</h3>
+                    <p>Laporkan kesalahan klasifikasi dan bantu kami jadi lebih baik.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about reveal" id="tentang">
+        <div class="container about-container">
+            <div class="about-content">
+                <h2 class="section-title" style="text-align: left;">Tentang TexGuard</h2>
+                <p>TexGuard adalah ekstensi peramban berbasis kecerdasan buatan yang dirancang untuk meredam kebisingan di ruang publik digital. Proyek ini dikembangkan sebagai bentuk dedikasi dalam menciptakan ekosistem media sosial berbahasa Indonesia yang lebih sehat dan positif.</p>
+                <p>Dengan memanfaatkan kehebatan model bahasa <strong>IndoBERTweet</strong>, TexGuard mampu menganalisis konteks kalimat, bahasa gaul, hingga sarkasme secara seketika (real-time) di perangkat Anda. Alhasil, Anda terbebas dari paparan komentar Toxic, Hate Speech, Spam, dan Cyberbullying tanpa kompromi privasi.</p>
+            </div>
+            <div class="about-image">
+                <div class="modern-ai-core">
+                    <div class="core-glow"></div>
+                    <div class="orbit orbit-1">
+                        <div class="orbit-node node-1"><i class="ph-fill ph-shield-warning"></i></div>
+                    </div>
+                    <div class="orbit orbit-2">
+                        <div class="orbit-node node-2"><i class="ph-fill ph-text-aa"></i></div>
+                        <div class="orbit-node node-3"><i class="ph-fill ph-chat-teardrop-text"></i></div>
+                    </div>
+                    <div class="core-center">
+                        <i class="ph-fill ph-brain"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact reveal" id="kontak">
+        <div class="container contact-container">
+            <div class="contact-info">
+                <h2 class="section-title" style="text-align: left;">Hubungi Pengembang</h2>
+                <p>Punya pertanyaan seputar ekstensi TexGuard, masukan pengembangan, atau tertarik untuk berdiskusi tentang proyek riset kecerdasan buatan ini? Jangan ragu untuk menghubungi saya!</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="c-icon"><i class="ph-fill ph-user"></i></div>
+                        <div class="c-text">
+                            <h4>Pengembang Utama</h4>
+                            <p>Asep Yaman Suryaman</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="c-icon"><i class="ph-fill ph-envelope-simple"></i></div>
+                        <div class="c-text">
+                            <h4>Email Resmi</h4>
+                            <p><a href="mailto:ay.suryaman@gmail.com">ay.suryaman@gmail.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper">
+                <form class="contact-form" action="https://formspree.io/f/mgobbldv" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nama Anda</label>
+                        <input type="text" id="name" name="nama" placeholder="Masukkan nama Anda" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Alamat Email</label>
+                        <input type="email" id="email" name="email" placeholder="nama@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Pesan / Masukan</label>
+                        <textarea id="message" name="pesan" rows="4" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Kirim Pesan <i class="ph ph-paper-plane-right"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="logo.png" alt="TexGuard Logo" class="app-logo">
+                        <span class="logo-text">TexGuard</span>
+                    </div>
+                    <p>Ekstensi AI (IndoBERTweet) untuk menciptakan ruang komentar yang lebih aman dan nyaman.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="#fitur">Fitur</a></li>
+                        <li><a href="panduan.html">Panduan</a></li>
+                        <li><a href="#tentang">Tentang</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Bantuan</h4>
+                    <ul>
+                        <li><a href="panduan.html">Panduan Penggunaan</a></li>
+                        <li><a href="panduan.html#tab-faq">FAQ</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="#kontak">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Ikuti Kami</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="ph ph-instagram-logo"></i></a>
+                        <a href="#"><i class="ph ph-twitter-logo"></i></a>
+                        <a href="#"><i class="ph ph-facebook-logo"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TexGuard. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

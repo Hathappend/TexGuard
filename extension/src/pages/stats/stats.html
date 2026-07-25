@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TexGuard - Statistik & Riwayat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/phosphor/regular/style.css">
+    <link rel="stylesheet" href="../../assets/phosphor/fill/style.css">
+    <script src="../../assets/chart.js"></script>
+    <link rel="stylesheet" href="stats.css">
+</head>
+<body>
+    <div class="layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="../../assets/icon48.png" alt="TexGuard Logo" class="app-logo">
+                <span>TexGuard</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active"><i class="ph ph-chart-bar"></i> Ringkasan</a>
+            </nav>
+            <div class="sidebar-bottom">
+                <a href="../settings/settings.html" class="nav-item"><i class="ph ph-faders"></i> Pengaturan Proteksi</a>
+                <a href="../feedback/feedback.html" class="nav-item"><i class="ph ph-chat-centered-text"></i> Kirim Feedback</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="header-section">
+                <div>
+                    <h1>Statistik & Riwayat Proteksi</h1>
+                    <p class="subtitle">Pantau komentar yang diproteksi dan kategori paling sering.</p>
+                </div>
+                <div class="filter-dropdown">
+                    <i class="ph ph-calendar-blank"></i>
+                    <select id="time-filter">
+                        <option value="7">7 Hari Terakhir</option>
+                        <option value="30">30 Hari Terakhir</option>
+                        <option value="all">Semua Waktu</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <section class="stats-cards">
+                <div class="card">
+                    <i class="ph ph-chat-circle-dots text-primary"></i>
+                    <h2 id="val-protected">0</h2>
+                    <p>Komentar Diproteksi</p>
+                </div>
+                <div class="card">
+                    <i class="ph ph-scan" style="color: #0ea5e9;"></i>
+                    <h2 id="val-scanned">0</h2>
+                    <p>Komentar Dipindai</p>
+                </div>
+        <div class="card">
+                    <i class="ph ph-shield text-success"></i>
+                    <h2 id="val-platform">0</h2>
+                    <p>Platform Aktif</p>
+                </div>
+                <div class="card">
+                    <i class="ph ph-trend-up text-accent"></i>
+                    <h2 id="val-accuracy">0</h2>
+                    <p style="display: flex; align-items: center; justify-content: center; gap: 4px;">
+                        Akurasi Klasifikasi
+                        <i class="ph-fill ph-info" title="Berdasarkan hasil evaluasi pengujian model AI" style="cursor: help; color: #94a3b8;"></i>
+                    </p>
+                </div>
+            </section>
+
+            <!-- Charts -->
+            <section class="charts-section">
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Komentar Diproteksi (Trend)</h3>
+                        <select id="trend-interval" class="small-select">
+                            <option value="daily">Harian</option>
+                            <option value="weekly">Mingguan</option>
+                        </select>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="trendChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Kategori Terbanyak</h3>
+                    </div>
+                    <div class="chart-body flex-row">
+                        <div class="donut-wrapper">
+                            <canvas id="donutChart"></canvas>
+                        </div>
+                        <div class="donut-legend" id="donut-legend">
+                            <!-- Legend injected by JS -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- History Table -->
+            <section class="history-section">
+                <h3>Riwayat Terbaru</h3>
+                <div class="table-container">
+                    <table class="history-table">
+                        <thead>
+                            <tr>
+                                <th>WAKTU</th>
+                                <th>PLATFORM</th>
+                                <th>KOMENTAR</th>
+                                <th>KATEGORI</th>
+                                <th>TINDAKAN</th>
+                            </tr>
+                        </thead>
+                        <tbody id="history-tbody">
+                            <!-- Rows injected by JS -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-footer pagination-controls">
+                    <button id="btn-prev-page" class="btn-outline" disabled><i class="ph ph-caret-left"></i> Sebelumnya</button>
+                    <span id="page-indicator">Halaman 1 dari 1</span>
+                    <button id="btn-next-page" class="btn-outline" disabled>Selanjutnya <i class="ph ph-caret-right"></i></button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../shared/Config.js"></script>
+    <script src="../../shared/Statistics.js"></script>
+    <script src="Stats.js"></script>
+</body>
+</html>
