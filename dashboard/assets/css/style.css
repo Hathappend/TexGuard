@@ -311,7 +311,7 @@ tbody tr:hover {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s;
-    z-index: 1000;
+    z-index: 99999;
 }
 .toast.show { opacity: 1; }
 .toast.error { background-color: #ef4444; }
